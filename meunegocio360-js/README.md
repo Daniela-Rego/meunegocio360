@@ -1,16 +1,25 @@
-# React + Vite
+# MeuNegocio360 — frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Frontend do MeuNegocio360 em React 19, Vite e Bootstrap 5.
 
-Currently, two official plugins are available:
+## Desenvolvimento local
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Na raiz do repositório, configure as variáveis conforme `.env.example` e inicie o backend Núcleo. Em seguida:
 
-## React Compiler
+```powershell
+cd meunegocio360-js
+npm install
+npm run dev
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+O Vite encaminha `/api` para `http://localhost:8080`; o frontend usa a URL relativa `/api/v1` para manter as chamadas na mesma origem. Variáveis `VITE_*` são públicas e não podem conter segredos.
 
-## Expanding the ESLint configuration
+## Comandos
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```powershell
+npm run lint
+npm run format
+npm run build
+```
+
+O fluxo de login e as convenções de interface estão especificados em [`docs/requisitos-fe.md`](../docs/requisitos-fe.md#rf-fe-001--fluxo-de-login-do-usuário). Os requisitos gerais estão em [`docs/requisitos-gerais.md`](../docs/requisitos-gerais.md).
